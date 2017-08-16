@@ -5,8 +5,8 @@ use Monolog\Handler\StreamHandler;
 use Monolog\Handler\FirePHPHandler;
 $logger = new Logger('LineBot');
 $logger->pushHandler(new StreamHandler('php://stderr', Logger::DEBUG));
-$httpClient = new \LINE\LINEBot\HTTPClient\CurlHTTPClient($_ENV["LINEBOT_ACCESS_TOKEN"]);
-$bot = new \LINE\LINEBot($httpClient, ['channelSecret' => $_ENV["LINEBOT_CHANNEL_SECRET"]]);
+$httpClient = new \LINE\LINEBot\HTTPClient\CurlHTTPClient($_ENV["E/Sw48ckHwE0pozIY/UqcRpbsuq7MuGc52wWB2p+F1gpd2QsaSAjLbwV9vSzpJieM9B9KhupR5NejlQdDFu4UfdxPfeZKtp/P3ka8M1cHYgqiZ7xL8fvxUmzoixr+vDx1iX7bg/6t2OmoJNs9hn97gdB04t89/1O/w1cDnyilFU="]);
+$bot = new \LINE\LINEBot($httpClient, ['channelSecret' => $_ENV["49e87b8a9e4453ee6e42cb4feb3bf22e"]]);
 $signature = $_SERVER['HTTP_' . \LINE\LINEBot\Constant\HTTPHeader::LINE_SIGNATURE];
 try {
 	$events = $bot->parseEventRequest(file_get_contents('php://input'), $signature);
